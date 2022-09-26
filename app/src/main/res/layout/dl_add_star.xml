@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá sản phẩm"
+        android:gravity="center_horizontal"
+        android:background="@color/Color_F9B138"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="15dp"
+    />
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_ratting_star1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star_dis"
+        />
+        <ImageView
+            android:id="@+id/iv_ratting_star2"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star_dis"
+            />
+        <ImageView
+            android:id="@+id/iv_ratting_star3"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star_dis"
+            />
+        <ImageView
+            android:id="@+id/iv_ratting_star4"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star_dis"
+            />
+        <ImageView
+            android:id="@+id/iv_ratting_star5"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/star_dis"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/iv_ratting_add_star"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gửi đánh giá"
+        android:textColor="@color/white"
+        android:backgroundTint="#4CAF50"/>
+</LinearLayout>

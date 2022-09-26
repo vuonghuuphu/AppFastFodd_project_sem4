@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuCategory"
+        android:icon="@drawable/category"
+        android:title="@string/categories"
+        />
+    <item
+        android:id="@+id/menuCart"
+        android:icon="@drawable/shoppingcart"
+        android:title="@string/cart"
+        />
+    <item
+        android:id="@+id/menuBill"
+        android:icon="@drawable/bill"
+        android:title="@string/bill"
+        />
+    <item
+        android:id="@+id/menuPoint"
+        android:icon="@drawable/favourite"
+        android:title="@string/point"
+        />
+
+    <item
+        android:title="@string/menuhelp"
+        >
+<menu>
+<item
+    android:id="@+id/menuNotification"
+    android:icon="@drawable/bell"
+    android:title="@string/notification"
+    />
+<item
+    android:id="@+id/menuHelp"
+    android:icon="@drawable/question"
+    android:title="@string/help"
+    />
+<item
+    android:id="@+id/menuFeedback"
+    android:icon="@drawable/rating"
+    android:title="@string/feedback"
+    />
+<item
+    android:id="@+id/menuSetting"
+    android:icon="@drawable/settings"
+    android:title="@string/setting"
+    />
+</menu>
+    </item>
+    </menu>

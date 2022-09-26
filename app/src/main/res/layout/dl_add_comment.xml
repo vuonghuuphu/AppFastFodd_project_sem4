@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+
+    <EditText
+        android:id="@+id/textView_comment"
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:text=""
+        android:hint="Nhập đánh giá"
+        />
+
+    <Button
+        android:id="@+id/button_send_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#4CAF50"
+        android:text="Gửi" />
+    <Button
+        android:id="@+id/button_close_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#F44336"
+        android:text="Hủy" />
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backgroud_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.Fragment.fragment_sale">
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <ImageView
+            android:id="@+id/btn_leftmenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="Leftmenu"
+            android:src="@drawable/discount_icon"
+            />
+        <TextView
+            android:layout_gravity ="center_vertical"
+            android:layout_width="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Sản phẩm đang giảm giá" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rcv_list_sale"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Sale"
+        />
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F8F8F8"
+    android:paddingBottom="20dp"
+    >
+    <TextView
+        android:background="@color/Color_F9B138"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn phương thức thanh toán"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:id="@+id/tv_money"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+android:padding="10dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:contentDescription="Leftmenu"
+            android:src="@drawable/money"
+
+            />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:text="Thanh toán khi nhận hàng"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tv_zalopay"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:contentDescription="Leftmenu"
+            android:src="@drawable/zalopay"
+
+            />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:text="ví Zalopay"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tv_momo"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:contentDescription="Leftmenu"
+            android:src="@drawable/logomomo"
+
+            />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:text="ví Momo"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogclose"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:text="Thoát"
+        android:textColor="@color/red"
+        android:textSize="14dp"
+        android:gravity="center"
+        />
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Client_App</string>
+    <!--    Menu-->
+    <string name="point">Điểm tích lũy</string>
+    <string name="categories">Danh mục</string>
+    <string name="notification">Thông báo</string>
+    <string name="setting">Cài đặt</string>
+    <string name="cart">Giỏ hàng</string>
+    <string name="bill">Hóa đơn</string>
+    <string name="help">Hỗ trợ</string>
+    <string name="feedback">Phản hồi</string>
+    <string name="menuhelp">Trợ giúp</string>
+    <!--Bottom Naigation-->
+    <string name="bottom_home">Giỏ hàng</string>
+    <string name="bottom_raiting">Hóa đơn</string>
+    <string name="bottom_Sale">Sale</string>
+    <string name="bottom_Sale1">Phản hồi</string>
+    <string name="bottom_account">Tài khoản</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

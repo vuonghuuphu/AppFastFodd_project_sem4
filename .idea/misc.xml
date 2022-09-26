@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/backgroud_gradient_home.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_card_item1.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_img_product.xml" value="0.101" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_item_hoz_cate.xml" value="0.101" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_item_product.xml" value="0.196" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_title.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/border_ttle.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/back.xml" value="0.249" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/backgroud_gradient.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_actionbar.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_card.xml" value="0.1995" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_card_btnqty.xml" value="0.2125" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_card_item.xml" value="0.1005" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_dl.xml" value="0.201" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_item_product.xml" value="0.147" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_menu.xml" value="0.115" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/border_new_home.xml" value="0.2" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_launcher_background.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_leftmenu.xml" value="0.115" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_news.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_sale.xml" value="0.196" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/next.xml" value="0.208" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_cart.xml" value="0.23232323232323232" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_list_categories.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_oder.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_order_detail.xml" value="0.33" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_order_dis.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_orderdiss.xml" value="0.225669099756691" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_product_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_productdetail.xml" value="0.24075275794938353" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_products.xml" value="0.19166666666666668" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_screen_product_detail.xml" value="0.16" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_screen_start.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_thanhcong.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_that_bai.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/content_product_detail.xml" value="0.19322916666666667" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dialog_select_pay.xml" value="0.2" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dialogloading.xml" value="0.18885869565217392" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_add_comment.xml" value="0.19322916666666667" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_add_star.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_edit_cus.xml" value="0.5" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_login.xml" value="0.5" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_select_pay.xml" value="0.16" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_news.xml" value="0.358695652173913" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_sale.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_user.xml" value="0.358695652173913" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/images_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_cart.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_cate_list.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_comment.xml" value="0.5500725689404935" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_categories.xml" value="0.5" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_oder.xml" value="0.22" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_oder_detail.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product_ho.xml" value="0.33" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_product_oder.xml" value="0.17831813576494426" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_rep.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_searc_producr.xml" value="0.4282238442822384" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_search_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/itemstest.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/menu_item_header.xml" value="0.25" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/pay_succeeded.xml" value="0.22" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/silder_item.xml" value="0.18802083333333333" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/menu/left_menu.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

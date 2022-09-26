@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="20"
+    tools:context=".View.Screen.LoginActivity">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imv_back_login"
+        android:layout_weight="0.5"
+        android:src="@drawable/back"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo_food"
+        />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ed_username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Nhập tên tài khoản"
+    />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ed_pass"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Nhập mật khẩu"
+        />
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Color_F9B138"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:width="300dp"
+        android:text="Đăng nhập" />
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="start"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.5"
+            android:id="@+id/tv_register"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="Đăng kí tài khoản" />
+        <TextView
+            android:gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.5"
+            android:id="@+id/tv_fpass"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quên mật khẩu ?" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5.5"
+        />
+</LinearLayout>

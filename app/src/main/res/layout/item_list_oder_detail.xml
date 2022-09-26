@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    >
+
+    <LinearLayout
+
+        android:paddingEnd="4dp"
+        android:background="@drawable/border_card_item1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iv_lt_order_detail"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/shipped" />
+
+        <LinearLayout
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5.6"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_id_lst_order_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1111111111111"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_price_lst_order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.000.000 vnd"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/btn_add_ratting"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:text="Đánh giá"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="15dp"
+    android:background="@color/Color_F9B138"
+    android:textColor="@color/black"
+    />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

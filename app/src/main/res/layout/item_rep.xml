@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/check_replly"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingEnd="10dp"
+        android:weightSum="6">
+
+        <LinearLayout
+            android:layout_width="414dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5.5"
+            android:orientation="vertical"
+            android:paddingLeft="2dp">
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/tv_comments_user1"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginEnd="10dp"
+                android:id="@+id/tv_comments1"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/userc"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
+            android:layout_marginEnd="20dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

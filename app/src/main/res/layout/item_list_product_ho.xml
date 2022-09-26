@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="5dp"
+    android:layout_width="172dp"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:background="@drawable/border_item_hoz_cate"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_listproduct"
+        android:layout_width="172dp"
+        android:layout_height="172dp"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:src="@drawable/next" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/newpro" />
+</RelativeLayout>
+
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_name_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Banh mi trung bo kho"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+             />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:textColor="#F44336"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:text="100.000.000 vnd" />
+        <TextView
+            android:id="@+id/tv_luotmua"
+            android:textSize="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200/ngay" />
+    </LinearLayout>
+</LinearLayout>

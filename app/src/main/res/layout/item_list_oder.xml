@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    >
+
+    <LinearLayout
+
+        android:paddingEnd="4dp"
+        android:background="@drawable/border_card_item1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/iv_lt_order"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/shipped" />
+
+        <LinearLayout
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_id_lst_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1111111111111"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_price_lst_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.000.000 vnd"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_day_lst_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20/10/2022"
+                android:textColor="@color/black"
+                android:textSize="13sp"  />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:background="@color/Color_F9B138"
+                android:id="@+id/tv_go_order_detail"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="Xem chi tiết"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:paddingBottom="5dp"
+            android:id="@+id/tv_shop"
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cua hang: ha noi"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
