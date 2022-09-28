@@ -57,16 +57,16 @@ public class ProductSearchAdapter extends RecyclerView.Adapter implements Filter
         ProductHolder productHolder = (ProductHolder) holder;
         ProductItem model = productList.get(position);
         productHolder.tv_Name.setText(model.getName());
-        String Price_un = NumberFormat.getNumberInstance(Locale.US).format(model.getUnit_price());
-        if (model.getUnit_price() == 0){
+        String Price_un = NumberFormat.getNumberInstance(Locale.US).format(model.getPromotion_price());
+        String Price = NumberFormat.getNumberInstance(Locale.US).format(model.getUnit_price());
+        if (model.getPromotion_price() == 0){
             productHolder.tv_Luotmua.setVisibility(View.GONE);
+            productHolder.tv_Price.setText(Price+" vnđ");
         }else {
-            productHolder.tv_Luotmua.setText(Price_un + " vnđ");
+            productHolder.tv_Luotmua.setText(Price + " vnđ");
+            productHolder.tv_Price.setText(Price_un+" vnđ");
             productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
-        String Price = NumberFormat.getNumberInstance(Locale.US).format(model.getPromotion_price());
-        productHolder.tv_Price.setText(Price+" vnđ");
-        productHolder.tv_shop.setText("Ha Noi");
         Picasso.get()
                 .load(model.getThumbnail())
                 .resize(200, 200)
@@ -119,7 +119,6 @@ public class ProductSearchAdapter extends RecyclerView.Adapter implements Filter
         TextView tv_Name;
         TextView tv_Price;
         TextView tv_Luotmua;
-        TextView tv_shop;
         ImageView iv_Image;
 
 
@@ -129,7 +128,6 @@ public class ProductSearchAdapter extends RecyclerView.Adapter implements Filter
             tv_Price = itemview.findViewById(R.id.tv_price);
             tv_Luotmua = itemview.findViewById(R.id.tv_luotmua);
             iv_Image = itemview.findViewById(R.id.iv_item_listproduct);
-            tv_shop = itemview.findViewById(R.id.tv_shop);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
 

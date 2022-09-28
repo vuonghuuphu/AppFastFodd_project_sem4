@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ChinhsachActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/Color_F9B138"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:weightSum="10"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_cs"
+            android:layout_width="34dp"
+            android:layout_height="37dp"
+            android:layout_weight="0.5"
+            android:contentDescription="Leftmenu"
+            android:src="@drawable/back"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="8.5"
+            android:paddingStart="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chính sách bảo mật"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/compliant"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="
+App này được Việt Nam quản lý. Khi mỗi khách hàng truy cập vào website này, trang web sẽ tự động lưu địa chỉ IP cùng với tên miền. Chúng tôi cũng sử dụng các công cụ kiểm tra như “cookie”. Một tài khoản cookie sẽ lưu trữ dữ liệu mà server của website gửi đến trình duyệt của khách hàng khi khách hàng truy cập vào trang web, việc sử dụng chức năng này sẽ giúp chúng tôi hỗ trợ và tìm hiểu nhu cầu, thị hiếu của khách hàng khi truy cập vào website của chúng tôi.
+Chúng tôi cũng kết hợp thông tin về địa chỉ IP và tên miền của khách hàng cùng với các thông tin khác mà khách hàng cung cấp.  Các thông tin này được cung cấp qua những email khách hàng gửi cho chúng tôi, hoặc các thông tin khách hàng điền khi muốn đăng ký, ý kiến phản hồi, những yêu cầu được hỗ trợ, trả lời phiếu điều tra hoặc tham gia vào một cuộc thi/ các hoạt động khuyến mại.
+
+Phạm vi sử dụng thông tin
+Thông tin được thu thập thông qua website của chúng tôi sẽ giúp chúng tôi:
+
+Hỗ trợ khách hàng khi mua sản phẩm của Vietsunshine.
+Giải đáp thắc mắc khách hàng.
+Cung cấp cho khách hàng thông tin về các phiên bản phần mềm mới nhất và các bản cập nhật trên Website của chúng tôi.
+Xem xét và nâng cấp nội dung và giao diện của Website.
+Thực hiện các bản khảo sát khách hàng.
+Thực hiện các hoạt động quảng bá liên quan đến các sản phẩm và dịch vụ của Vietsunshine.
+Để thực hiện các mục đích nêu trên, công ty chúng tôi sẽ xem xét chia sẻ thông tin với các công ty đối tác của Vietsunshine ở Việt Nam hoặc nước ngoài. Thông tin có thể được chia sẻ cho bên thứ ba mà chúng tôi tin tưởng sẽ hoàn thành được các mục tiêu đã đề ra ở trên. Tuy nhiên, trong trường hợp này, chúng tôi sẽ cố gắng để đảm bảo người nhận không thể lợi dụng thông tin của khách hàng để thực hiện các mục đích khác ngoài các mục tiêu mà chúng tôi đã đề ra trong phạm vi cho phép của khách hàng, chúng tôi cũng sẽ đảm bảo họ sẽ không sử dụng những thông tin này vào những mục đích trái phép. Thông tin chỉ được tiết lộ cho bên thứ ba trong những trường hợp đặc biệt khi có sự yêu cầu của luật pháp hoặc nhà chức trách có thẩm quyền. Đặc biệt, chúng tôi không cho thuê hoặc bán thông tin của khách hàng cho bất kỳ đối tác thứ ba nào (trừ khi nó liên quan đến nhu cầu bán toàn bộ tài sản hoặc hoạt động kinh doanh của chúng tôi như đã đề cập).
+
+Thời gian lưu trữ thông tin
+Dữ liệu cá nhân của khách hàng sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ hoặc tự khách hàng đăng nhập và thực hiện hủy bỏ. Còn lại trong mọi trường hợp thông tin cá nhân khách hàng sẽ được bảo mật trên hệ thống máy chủ của Vietsunshine Việt Nam.
+
+Những người hoặc tổ chức có thể được tiếp cận với thông tin bảo mật
+Vietsunshine Việt Nam và các bộ phận liên quan đến việc hỗ trợ và thực hiện hợp đồng với người tiêu dùng.
+Công ty đối tác của Vietsunshine ở Việt Nam hoặc nước ngoài.
+Bên thứ ba mà Vietsunshine Việt Nam tin tưởng sẽ hoàn thành các mục tiêu đã đề ra trong việc thu thập thông tin cá nhân người dùng hoặc bên thứ ba khi có nhu cầu bán toàn bộ tài sản hoặc hoạt động kinh doanh của chúng tôi như đã đề cập.
+Trong trường hợp có yêu cầu của pháp luật: Công ty có trách nhiệm hợp tác cung cấp thông tin cá nhân khách hàng khi có yêu cầu từ cơ quan tư pháp bao gồm: Viện kiểm sát, tòa án, cơ quan công an điều tra liên quan đến hành vi vi phạm pháp luật nào đó của khách hàng. Ngoài ra, không ai có quyền xâm phạm vào thông tin cá nhân của khách hàng.
+Địa chỉ của đơn vị thu thập và quản lý thông tin
+Công ty Cổ phần Giải pháp điện tử Việt Hồng Quang (Vietsunshine)
+Địa chỉ liên hệ: Lầu 2, Tòa nhà Central Garden, 328 Võ Văn Kiệt, Phường Cô Giang, Quận 1, Tp HCM
+Email: info@Vietsunshine.com.vn
+Đối với các thắc mắc về hoạt động thu thập, xử lý thông tin liên quan đến cá nhân người tiêu dùng, khách hàng có thể liên hệ: +84-283920 8030"
+        />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

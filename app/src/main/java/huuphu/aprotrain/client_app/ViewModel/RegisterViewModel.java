@@ -54,14 +54,12 @@ public class RegisterViewModel {
             dialog.cancel();
             Toast.makeText(view.getContext(), validate, Toast.LENGTH_SHORT).show();
         } else {
-            System.out.println("hello");
             ApiManager.getService().apiRegister(request).enqueue(new Callback<RegisterResponse>() {
                 @Override
                 public void onResponse(@NonNull Call<RegisterResponse> call, @NonNull Response<RegisterResponse> response) {
                     RegisterResponse res = response.body();
                     if (response.code() == 201){
                         Account_cus account_cus = new Account_cus(res.getId(),Name,null,email,null,phone);
-                        System.out.println("okokok "+ res.getId());
                         ApiManager.getService().addCustomers(account_cus).enqueue(new Callback<Customers>() {
                             @Override
                             public void onResponse(Call<Customers> call, Response<Customers> response) {

@@ -252,20 +252,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 replace(new fragment_cart());
                 drawerLayout.close();
                 break;
-            case R.id.menuPoint:
-                // do you click actions for the third selection
-                break;
             case R.id.menuNotification:
-                // do you click actions for the third selection
-                break;
-            case R.id.menuHelp:
-                // do you click actions for the third selection
-                break;
-            case R.id.menuFeedback:
-                // do you click actions for the third selection
-                break;
-            case R.id.menuSetting:
-                // do you click actions for the third selection
+                Intent intent1 = new Intent(this, ChinhsachActivity.class);
+                startActivity(intent1);
+                drawerLayout.close();
                 break;
         }
         return true;

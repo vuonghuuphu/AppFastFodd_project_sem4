@@ -51,19 +51,18 @@ public class ProductNewAdapter extends RecyclerView.Adapter {
         ProductItem model = productList.get(position);
         productHolder.tv_Name.setText(model.getName());
         String Price_un = NumberFormat.getNumberInstance(Locale.US).format(model.getPromotion_price());
-        if (model.getUnit_price() == 0){
-            productHolder.tv_Luotmua.setVisibility(View.GONE);
-        }else {
-            productHolder.tv_Luotmua.setText(Price_un + " vnđ");
-            productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
         String Price = NumberFormat.getNumberInstance(Locale.US).format(model.getUnit_price());
-        productHolder.tv_Price.setText(Price+" vnđ");
-        productHolder.tv_shop.setText("Ha Noi");
+        if (model.getPromotion_price() == 0){
+            productHolder.tv_Luotmua.setVisibility(View.GONE);
+            productHolder.tv_Price.setText(Price+" vnđ");
+        }else {
+            productHolder.tv_Luotmua.setText(Price + " vnđ");
+            productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            productHolder.tv_Price.setText(Price_un+" vnđ");
+        }
         Picasso.get()
                 .load(model.getThumbnail())
-                .resize(200, 200)
-                .centerCrop()
+                .resize(610, 622)
                 .into(productHolder.iv_Image);
     }
     @Override
@@ -76,7 +75,6 @@ public class ProductNewAdapter extends RecyclerView.Adapter {
         TextView tv_Name;
         TextView tv_Price;
         TextView tv_Luotmua;
-        TextView tv_shop;
         ImageView iv_Image;
 
 
@@ -86,7 +84,6 @@ public class ProductNewAdapter extends RecyclerView.Adapter {
             tv_Price = itemview.findViewById(R.id.tv_price);
             tv_Luotmua = itemview.findViewById(R.id.tv_luotmua);
             iv_Image = itemview.findViewById(R.id.iv_item_listproduct);
-            tv_shop = itemview.findViewById(R.id.tv_shop);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
 

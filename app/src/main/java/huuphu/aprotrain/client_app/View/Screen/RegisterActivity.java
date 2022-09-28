@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Objects;
@@ -24,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btn_register ;
     EditText ed_username,ed_pass,ed_pass_confim,ed_Name_cus_res,ed_Phone_cus_res,ed_Email_cus_res;
     TextView tv_login;
+    ImageView btn_back_r ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
         ed_username = findViewById(R.id.ed_username_res);
         tv_login = findViewById(R.id.tv_login);
         ed_pass_confim = findViewById(R.id.ed_passConfim_res);
+        btn_back_r = findViewById(R.id.btn_back_r);
+
+        btn_back_r.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         ed_Name_cus_res = findViewById(R.id.ed_Name_cus_res);
         ed_Phone_cus_res = findViewById(R.id.ed_Phone_cus_res);

@@ -15,15 +15,5 @@
         android:icon="@drawable/bill"
         android:title="@string/bill"
         />
-    <item
-        android:id="@+id/menuPoint"
-        android:icon="@drawable/favourite"
-        android:title="@string/point"
-        />
-    <item
-        android:id="@+id/menuPoint"
-        android:icon="@drawable/favourite"
-        android:title="@string/point"
-        />
 
     </menu>

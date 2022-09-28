@@ -26,13 +26,10 @@ import com.smarteist.autoimageslider.SliderView;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-import huuphu.aprotrain.client_app.MainActivity;
 import huuphu.aprotrain.client_app.Model.Cart;
 import huuphu.aprotrain.client_app.Model.Comments;
 import huuphu.aprotrain.client_app.Model.Product;
@@ -42,11 +39,11 @@ import huuphu.aprotrain.client_app.Model.Request.Cartdata_res;
 import huuphu.aprotrain.client_app.Model.Request.Comment_res;
 import huuphu.aprotrain.client_app.Model.Star;
 import huuphu.aprotrain.client_app.Network.ApiManager;
-import huuphu.aprotrain.client_app.Order_dis_Activity;
 import huuphu.aprotrain.client_app.R;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.CommentAdapter;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.ProductOtherAdapter;
 import huuphu.aprotrain.client_app.View.Adapter.Slider_detail_Adapter;
+import huuphu.aprotrain.client_app.View.Onclick.ProductOnclick;
 import huuphu.aprotrain.client_app.data.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,10 +65,14 @@ public class ProductdetailActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+        Dialog dialogoload = new Dialog(ProductdetailActivity.this); // Context, this, etc.
+        dialogoload.setContentView(R.layout.dialogloading);
+        dialogoload.show();
+
         System.out.println("id_usser1= "+ Constants.idUser);
         System.out.println("id_usser1= "+ Constants.token);
 
-        btnBack = findViewById(R.id.btn_back);
+        btnBack = findViewById(R.id.btn_back_r);
         btn_rep = findViewById(R.id.btn_rep);
         recyclerView_img = findViewById(R.id.rcv_list_images_detail);
         recyclerView_product = findViewById(R.id.rcv_list_product_other);
@@ -264,10 +265,16 @@ public class ProductdetailActivity extends AppCompatActivity {
 
 
                 tvname.setText(product.getName());
-                String Price = NumberFormat.getNumberInstance(Locale.US).format(product.getPromotion_price());
-                tvprice.setText(Price+" vnđ");
-                String Price_un = NumberFormat.getNumberInstance(Locale.US).format(product.getUnit_price());
-                tvUnit_price.setText(Price_un+" vnđ");
+                if(product.getPromotion_price() == 0){
+                    String Price = NumberFormat.getNumberInstance(Locale.US).format(product.getUnit_price());
+                    tvprice.setText(Price+" vnđ");
+                    tvUnit_price.setVisibility(View.GONE);
+                }else {
+                    String Price = NumberFormat.getNumberInstance(Locale.US).format(product.getPromotion_price());
+                    tvprice.setText(Price+" vnđ");
+                    String Price_un = NumberFormat.getNumberInstance(Locale.US).format(product.getUnit_price());
+                    tvUnit_price.setText(Price_un+" vnđ");
+                }
                 tvUnit_price.setPaintFlags(tvUnit_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 tvProductDetailDes.setText(product.getDescription());
                 button_add_cart = findViewById(R.id.button_add_cart);
@@ -316,12 +323,22 @@ public class ProductdetailActivity extends AppCompatActivity {
         ApiManager.getService().getlistProducts().enqueue(new Callback<List<ProductItem>>() {
             @Override
             public void onResponse(@NonNull Call<List<ProductItem>> call, @NonNull Response<List<ProductItem>> response) {
+                dialogoload.cancel();
                 List<ProductItem> products = response.body();
                 assert products != null;
                 ProductOtherAdapter productOtherAdapter = new ProductOtherAdapter(ProductdetailActivity.this,products);
                 RecyclerView.LayoutManager layoutManager_product_new = new LinearLayoutManager(ProductdetailActivity.this,RecyclerView.HORIZONTAL,false);
                 recyclerView_product.setLayoutManager(layoutManager_product_new);
                 recyclerView_product.setAdapter(productOtherAdapter);
+                productOtherAdapter.setProductOnclick(new ProductOnclick() {
+                    @Override
+                    public void onClickitem(int position) {
+                        Intent intent = new Intent(ProductdetailActivity.this, ProductdetailActivity.class);
+                        intent.putExtra("id", products.get(position).getId());
+                        startActivity(intent);
+                    }
+                });
+
             }
 
             @Override

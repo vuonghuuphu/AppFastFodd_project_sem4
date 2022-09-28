@@ -28,8 +28,9 @@
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/ic_sale.xml" value="0.196" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/drawable/next.xml" value="0.208" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_cart.xml" value="0.23232323232323232" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_chinhsach.xml" value="0.36666666666666664" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_list_categories.xml" value="0.1" />
-        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_oder.xml" value="0.25" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/activity_order_detail.xml" value="0.33" />
@@ -49,7 +50,8 @@
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dialogloading.xml" value="0.18885869565217392" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_add_comment.xml" value="0.19322916666666667" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_add_star.xml" value="0.36666666666666664" />
-        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_edit_cus.xml" value="0.5" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_edit_account_in_order.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_edit_cus.xml" value="0.33" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_login.xml" value="0.5" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/dl_select_pay.xml" value="0.16" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
@@ -65,8 +67,9 @@
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_categories.xml" value="0.5" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_oder.xml" value="0.22" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_oder_detail.xml" value="0.25" />
-        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product.xml" value="0.1" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product.xml" value="0.33" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product_ho.xml" value="0.33" />
+        <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_list_product_other.xml" value="0.36666666666666664" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_product_oder.xml" value="0.17831813576494426" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_rep.xml" value="0.25" />
         <entry key="..\:/Project_App_Sem4/Client/app/src/main/res/layout/item_searc_producr.xml" value="0.4282238442822384" />

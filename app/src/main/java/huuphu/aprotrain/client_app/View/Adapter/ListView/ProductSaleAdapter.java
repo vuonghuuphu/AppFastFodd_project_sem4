@@ -56,7 +56,6 @@ public class ProductSaleAdapter extends RecyclerView.Adapter {
         productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         String Price = NumberFormat.getNumberInstance(Locale.US).format(model.getUnit_price());
         productHolder.tv_Price.setText(Price+" vnđ");
-        productHolder.tv_shop.setText("Ha Noi");
         Picasso.get()
                 .load(model.getThumbnail())
                 .resize(200, 200)
@@ -73,7 +72,6 @@ public class ProductSaleAdapter extends RecyclerView.Adapter {
         TextView tv_Name;
         TextView tv_Price;
         TextView tv_Luotmua;
-        TextView tv_shop;
         ImageView iv_Image;
 
 
@@ -83,7 +81,6 @@ public class ProductSaleAdapter extends RecyclerView.Adapter {
             tv_Price = itemview.findViewById(R.id.tv_price);
             tv_Luotmua = itemview.findViewById(R.id.tv_luotmua);
             iv_Image = itemview.findViewById(R.id.iv_item_listproduct);
-            tv_shop = itemview.findViewById(R.id.tv_shop);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
 

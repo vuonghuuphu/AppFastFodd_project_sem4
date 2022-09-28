@@ -69,6 +69,9 @@ public class CartActivity extends AppCompatActivity implements CartListener {
 
         Constants.list_oder_product = null;
         Constants.ttp = 0.0;
+        Dialog dialogoload = new Dialog(CartActivity.this); // Context, this, etc.
+        dialogoload.setContentView(R.layout.dialogloading);
+        dialogoload.show();
 
         button_oder.setOnClickListener(view -> {
             Constants.name_cus = SharedPreferencesHelper.ReadUser(EnumApp.KeyName_cus,this);
@@ -77,7 +80,7 @@ public class CartActivity extends AppCompatActivity implements CartListener {
             if(Constants.ttp == 0){
                 Toast.makeText(this, "Chưa chọn sản phẩm nào !", Toast.LENGTH_SHORT).show();
             }else {
-                if (Constants.name_cus != null&&Constants.sdt_cus!= null&&Constants.address_cus!=null){
+                if (Constants.name_cus != null&&Constants.sdt_cus!= null&&Constants.address_cus!=null && Constants.address_cus != ""){
                     Intent intent = new Intent(CartActivity.this, OderActivity.class);
                     startActivity(intent);
                 }else{
@@ -85,12 +88,11 @@ public class CartActivity extends AppCompatActivity implements CartListener {
                     dialog.setContentView(R.layout.dl_edit_cus);
                     dialog.getWindow().setLayout(view.getLayoutParams().MATCH_PARENT,view.getLayoutParams().WRAP_CONTENT);
                     dialog.setCancelable(false);
-                    TextView btnClose = dialog.findViewById(R.id.dialogclose_cus);
                     TextView btnadd = dialog.findViewById(R.id.dialogedit_cus);
 
                     EditText ed_address_cus = dialog.findViewById(R.id.ed_address_cus);
 
-                    btnClose.setOnClickListener(new View.OnClickListener() {
+                    btnadd.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             ApiManager.getService().getCustomers().enqueue(new Callback<List<Customers>>() {
@@ -142,24 +144,6 @@ public class CartActivity extends AppCompatActivity implements CartListener {
                             });
                         }
                     });
-
-                    btnadd.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if(
-                               ed_address_cus.getText().toString().equals("")){
-                                Toast.makeText(CartActivity.this, "Nhập đầy đủ các thông tin", Toast.LENGTH_SHORT).show();
-                            }else {
-//                                SharedPreferencesHelper.Save(EnumApp.KeyName_cus,ed_name_cus.getText().toString(),view);
-                                SharedPreferencesHelper.Save(EnumApp.Keyaddress_cus,ed_address_cus.getText().toString(),view);
-//                                SharedPreferencesHelper.Save(EnumApp.KeyPhone_cus,ed_sdt_res.getText().toString(),view);
-                                Intent intent = new Intent(CartActivity.this, OderActivity.class);
-                                startActivity(intent);
-                                dialog.cancel();
-                            }
-
-                        }
-                    });
                     dialog.show();
                 }
 
@@ -192,52 +176,52 @@ public class CartActivity extends AppCompatActivity implements CartListener {
                     List<Cart> cartList = response.body();
                     List<CartItem> items = new ArrayList<>();
                     String IdAccount = Constants.idUser;
-                    System.out.println("pay app"+Constants.idUser);
-                    System.out.println("Call api = "+ cartList.get(0).getAccountId());
-                    for (int i = 0 ; i< cartList.size();i++){
-                        if (Objects.equals(cartList.get(i).getAccountId(), IdAccount)){
-                            for (int j =0; j < cartList.get(i).getCartItems().size();j++){
-                                items.add(cartList.get(i).getCartItems().get(j));
-                                CartAdapter cartAdapter = new CartAdapter(CartActivity.this,cartList.get(i).getCartItems(),CartActivity.this);
-                                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CartActivity.this,RecyclerView.VERTICAL,false);
-                                Constants.list_oder_product = cartList.get(i).getCartItems();
-                                rcv.setLayoutManager(layoutManager);
-                                rcv.setAdapter(cartAdapter);
-                                cartAdapter.DeleteOnclick(position -> ApiManager.getService().DeleteCart(items.get(position).getId()).enqueue(new Callback<Boolean>() {
-                                    @Override
-                                    public void onResponse(Call<Boolean> call1, Response<Boolean> response1) {
-                                        items.remove((items.get(position)));
-                                        Toast.makeText(CartActivity.this,"Delete", Toast.LENGTH_SHORT).show();
-                                        CartAdapter cartAdapter1 = new CartAdapter(CartActivity.this,items,CartActivity.this);
-                                        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(CartActivity.this,RecyclerView.VERTICAL,false);
-                                        Constants.list_oder_product = items;
-                                        rcv.setLayoutManager(layoutManager1);
-                                        rcv.setAdapter(cartAdapter1);
-                                        Constants.ttp = 0;
-                                        for (CartItem cartitem : items) {
-                                            Constants.ttp = Constants.ttp + (cartitem.getUnitPrice()*cartitem.getQuantity());
+                    if(cartList != null) {
+                        for (int i = 0; i < cartList.size(); i++) {
+                            if (Objects.equals(cartList.get(i).getAccountId(), IdAccount)) {
+                                for (int j = 0; j < cartList.get(i).getCartItems().size(); j++) {
+                                    items.add(cartList.get(i).getCartItems().get(j));
+                                    CartAdapter cartAdapter = new CartAdapter(CartActivity.this, cartList.get(i).getCartItems(), CartActivity.this);
+                                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CartActivity.this, RecyclerView.VERTICAL, false);
+                                    Constants.list_oder_product = cartList.get(i).getCartItems();
+                                    rcv.setLayoutManager(layoutManager);
+                                    rcv.setAdapter(cartAdapter);
+                                    cartAdapter.DeleteOnclick(position -> ApiManager.getService().DeleteCart(items.get(position).getId()).enqueue(new Callback<Boolean>() {
+                                        @Override
+                                        public void onResponse(Call<Boolean> call1, Response<Boolean> response1) {
+                                            items.remove((items.get(position)));
+                                            Toast.makeText(CartActivity.this, "Delete", Toast.LENGTH_SHORT).show();
+                                            CartAdapter cartAdapter1 = new CartAdapter(CartActivity.this, items, CartActivity.this);
+                                            RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(CartActivity.this, RecyclerView.VERTICAL, false);
+                                            Constants.list_oder_product = items;
+                                            rcv.setLayoutManager(layoutManager1);
+                                            rcv.setAdapter(cartAdapter1);
+                                            Constants.ttp = 0;
+                                            for (CartItem cartitem : items) {
+                                                Constants.ttp = Constants.ttp + (cartitem.getUnitPrice() * cartitem.getQuantity());
+                                            }
+                                            String Price = NumberFormat.getNumberInstance(Locale.US).format(Constants.ttp);
+                                            TTPrice.setText(Price + " vnđ");
                                         }
-                                        String Price = NumberFormat.getNumberInstance(Locale.US).format(Constants.ttp);
-                                        TTPrice.setText(Price+" vnđ");
-                                    }
-                                    @Override
-                                    public void onFailure(Call<Boolean> call1, Throwable t) {
 
-                                    }
-                                }));
+                                        @Override
+                                        public void onFailure(Call<Boolean> call1, Throwable t) {
+
+                                        }
+                                    }));
+                                }
+                                System.out.println("Cảtyyyyy" + items.size());
                             }
-                            System.out.println("Cảtyyyyy" + items.size());
+                            Constants.ttp = 0;
+                            for (CartItem cartitem : items) {
+                                Constants.ttp = Constants.ttp + (cartitem.getUnitPrice() * cartitem.getQuantity());
+                            }
                         }
-                        Constants.ttp = 0;
-                        for (CartItem cartitem : items) {
-                            Constants.ttp = Constants.ttp + (cartitem.getUnitPrice()*cartitem.getQuantity());
-                        }
+                        String Price = NumberFormat.getNumberInstance(Locale.US).format(Constants.ttp);
+                        TTPrice.setText(Price + " vnđ");
                     }
-                    String Price = NumberFormat.getNumberInstance(Locale.US).format(Constants.ttp);
-                    TTPrice.setText(Price+" vnđ");
 
-
-
+dialogoload.cancel();
                 }
 
                 @Override

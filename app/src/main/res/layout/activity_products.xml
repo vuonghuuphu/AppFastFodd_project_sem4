@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#D5D5D5"
     android:weightSum="10"
     tools:context=".ProductsActivity">
 
@@ -49,7 +48,7 @@
     </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="10dp"
+            android:padding="10dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             android:scrollbars="none"
             android:id="@+id/rcv_listproducts"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import huuphu.aprotrain.client_app.Network.ApiManager;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.Order_Adapter;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.Order_detail_Adapter;
 import huuphu.aprotrain.client_app.View.Fragment.fragment_cart;
+import huuphu.aprotrain.client_app.View.Screen.CartActivity;
 import huuphu.aprotrain.client_app.data.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,6 +58,9 @@ TextView tvId,tvDay,tvprice,tvStatus,btn_end_order;
         btn_end_order = findViewById(R.id.btn_end_order);
         btnback.setOnClickListener(view -> finish());
         btn_end_order.setVisibility(View.GONE);
+        Dialog dialogoload = new Dialog(OrderDetailActivity.this); // Context, this, etc.
+        dialogoload.setContentView(R.layout.dialogloading);
+        dialogoload.show();
         ApiManager.getService().getOrderDetail(id).enqueue(new Callback<OrderItem>() {
             List<ProductItem> lstProduct = new ArrayList<>();
             @Override
@@ -140,6 +145,7 @@ TextView tvId,tvDay,tvprice,tvStatus,btn_end_order;
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(OrderDetailActivity.this,RecyclerView.VERTICAL,false);
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
+                            dialogoload.cancel();
                         }
                         @Override
                         public void onFailure(Call<ProductItem> call, Throwable t) {

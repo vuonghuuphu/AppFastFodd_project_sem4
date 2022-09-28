@@ -53,8 +53,7 @@ public class CategoriesHomeAdapter extends RecyclerView.Adapter {
         categoryHolder.tv_Name.setText(model.getName());
         Picasso.get()
                 .load(model.getThumbnail())
-                .resize(60, 60)
-                .centerCrop()
+                .resize(70, 70)
                 .into(categoryHolder.iv_Image);
         categoryHolder.cardView.setBackgroundResource(R.drawable.border_card);
     }

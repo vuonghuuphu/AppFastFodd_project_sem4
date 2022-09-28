@@ -19,6 +19,7 @@ import java.util.Objects;
 import huuphu.aprotrain.client_app.Model.Product;
 import huuphu.aprotrain.client_app.Model.ProductItem;
 import huuphu.aprotrain.client_app.Network.ApiManager;
+import huuphu.aprotrain.client_app.View.Adapter.GridSpacingItemDecoration;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.ProductNewAdapter;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.ProductsAdapter;
 import huuphu.aprotrain.client_app.View.Onclick.ProductOnclick;
@@ -55,7 +56,10 @@ public class ProductsActivity extends AppCompatActivity {
                 recyclerViewProducts.setLayoutManager(layoutManager_product_new);
                 recyclerViewProducts.setNestedScrollingEnabled(false);
                 recyclerViewProducts.setAdapter(productNewAdapter);
-                recyclerViewProducts.addItemDecoration(new SpacesItemDecoration(15));
+                int spanCount = 2; // 3 columns
+                int spacing = 15; // 50px
+                boolean includeEdge = false;
+                recyclerViewProducts.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
                 productNewAdapter.setProductOnclick(new ProductOnclick() {
                     @Override
                     public void onClickitem(int position) {

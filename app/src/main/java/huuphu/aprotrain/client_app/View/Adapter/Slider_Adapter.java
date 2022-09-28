@@ -32,7 +32,7 @@ public class Slider_Adapter extends SliderViewAdapter<Slider_Adapter.Holder>{
     public void onBindViewHolder(Holder viewHolder, int position) {
         Picasso.get()
                 .load(images.get(position).getThumbnail())
-                .resize(420, 200)
+                .resize(800, 440)
                 .centerCrop()
                 .into(viewHolder.imageView);
     }

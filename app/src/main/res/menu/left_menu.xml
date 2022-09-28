@@ -16,35 +16,15 @@
         android:title="@string/bill"
         />
     <item
-        android:id="@+id/menuPoint"
-        android:icon="@drawable/favourite"
-        android:title="@string/point"
-        />
-
-    <item
         android:title="@string/menuhelp"
         >
 <menu>
 <item
     android:id="@+id/menuNotification"
-    android:icon="@drawable/bell"
+    android:icon="@drawable/rules"
     android:title="@string/notification"
     />
-<item
-    android:id="@+id/menuHelp"
-    android:icon="@drawable/question"
-    android:title="@string/help"
-    />
-<item
-    android:id="@+id/menuFeedback"
-    android:icon="@drawable/rating"
-    android:title="@string/feedback"
-    />
-<item
-    android:id="@+id/menuSetting"
-    android:icon="@drawable/settings"
-    android:title="@string/setting"
-    />
+
 </menu>
     </item>
     </menu>

@@ -75,7 +75,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content">
         <TextView
-            android:gravity="start"
+            android:gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_weight="0.5"
             android:id="@+id/tv_register"
@@ -85,17 +85,6 @@
             android:textSize="15sp"
             android:layout_height="wrap_content"
             android:text="Đăng kí tài khoản" />
-        <TextView
-            android:gravity="end"
-            android:layout_marginTop="10dp"
-            android:layout_weight="0.5"
-            android:id="@+id/tv_fpass"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quên mật khẩu ?" />
     </LinearLayout>
 
     <RelativeLayout

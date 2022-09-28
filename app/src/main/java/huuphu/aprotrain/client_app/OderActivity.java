@@ -34,10 +34,12 @@ import java.util.Map;
 import java.util.Objects;
 
 import huuphu.aprotrain.client_app.Model.CartItem;
+import huuphu.aprotrain.client_app.Model.Customers;
 import huuphu.aprotrain.client_app.Model.EnumApp;
 import huuphu.aprotrain.client_app.Model.OrderItem;
 import huuphu.aprotrain.client_app.Model.Product;
 import huuphu.aprotrain.client_app.Model.Request.Oder_res;
+import huuphu.aprotrain.client_app.Model.Response.Account_cus_rp;
 import huuphu.aprotrain.client_app.Model.Zalopay.CreateOrder;
 import huuphu.aprotrain.client_app.Network.ApiManager;
 import huuphu.aprotrain.client_app.View.Adapter.ListView.CartAdapter;
@@ -111,30 +113,89 @@ public class OderActivity extends AppCompatActivity {
         tv_edit_cus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.setContentView(R.layout.dl_edit_cus);
+                dialog.setContentView(R.layout.dl_edit_account_in_order);
                 dialog.getWindow().setLayout(view.getLayoutParams().MATCH_PARENT,view.getLayoutParams().WRAP_CONTENT);
-                dialog.setCancelable(false);
-                TextView btnClose = dialog.findViewById(R.id.dialogclose_cus);
-                TextView btnadd = dialog.findViewById(R.id.dialogedit_cus);
-                ed_address_cus = dialog.findViewById(R.id.ed_address_cus);
-                btnClose.setOnClickListener(view1 -> dialog.cancel());
+                dialog.setCancelable(true);
 
-                btnadd.setOnClickListener(new View.OnClickListener() {
+                TextView dialogedit_cus,
+                        ed_name_cus_dl,
+                        ed_address_cus_dl,
+                        ed_sdt_cus_dl,
+                        ed_email_cus_dl,
+                        ed_gender_cus_dl;
+
+
+                dialogedit_cus = dialog.findViewById(R.id.dialogedit_cus);
+                ed_address_cus_dl = dialog.findViewById(R.id.ed_address_cus_dl);
+                ed_name_cus_dl = dialog.findViewById(R.id.ed_name_cus_dl);
+                ed_sdt_cus_dl = dialog.findViewById(R.id.ed_sdt_cus_dl);
+                ed_email_cus_dl = dialog.findViewById(R.id.ed_email_cus_dl);
+                ed_gender_cus_dl = dialog.findViewById(R.id.ed_gender_cus_dl);
+
+                ApiManager.getService().getCustomers().enqueue(new Callback<List<Customers>>() {
+                    @Override
+                    public void onResponse(Call<List<Customers>> call, Response<List<Customers>> response) {
+                        List<Customers> customers = response.body();
+                        for (int i = 0; i < customers.size(); i++) {
+                            if (customers.get(i).id_account.equals(Constants.idUser)){
+                                ed_name_cus_dl.setText(customers.get(i).getName());
+                                ed_address_cus_dl.setText(customers.get(i).getAddress());
+                                ed_email_cus_dl.setText(customers.get(i).getEmail());
+                                if (customers.get(i).getGender() == null){
+                                    ed_gender_cus_dl.setText(" Chưa có thông tin* ");
+                                }else {
+                                    ed_gender_cus_dl.setText(customers.get(i).getGender());
+                                }
+                                ed_sdt_cus_dl.setText( customers.get(i).phone_number);
+                                int idr = customers.get(i).getId();
+                                String Id_account = customers.get(i).getId_account();
+                dialogedit_cus.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(ed_name_cus.getText().toString().equals("") ||
-                                ed_address_cus.getText().toString().equals("") ||
-                                ed_sdt_res.getText().toString().equals("")){
+                        if(ed_name_cus_dl.getText().toString().equals("") ||
+                                ed_address_cus_dl.getText().toString().equals("") ||
+                                ed_sdt_cus_dl.getText().toString().equals("")){
                             Toast.makeText(OderActivity.this, "Nhập đầy đủ các thông tin", Toast.LENGTH_SHORT).show();
                         }else {
-                            Constants.name_cus = ed_name_cus.getText().toString();
-                            Constants.address_cus = ed_address_cus.getText().toString();
-                            Constants.sdt_cus = ed_sdt_res.getText().toString();
-                            order_name_cus.setText("Tên khách hàng: "+ed_name_cus.getText().toString());
-                            order_sdt_cus.setText("Số điện thoại: "+ed_address_cus.getText().toString());
-                            order_address_cus.setText("Địa chỉ nhận hàng: "+ed_sdt_res.getText().toString());
+                            Account_cus_rp account_cus_rp = new Account_cus_rp(
+                                    idr,
+                                    Id_account,
+                                    ed_name_cus_dl.getText().toString(),
+                                    ed_gender_cus_dl.getText().toString(),
+                                    ed_email_cus_dl.getText().toString(),
+                                    ed_address_cus_dl.getText().toString(),
+                                    ed_sdt_cus_dl.getText().toString());
+                            ApiManager.getService().EditCustomers(""+idr,account_cus_rp) .enqueue(new Callback<Account_cus_rp>() {
+                                @Override
+                                public void onResponse(Call<Account_cus_rp> call, Response<Account_cus_rp> response) {
+                                    Constants.name_cus = ed_name_cus_dl.getText().toString();
+                                    Constants.sdt_cus = ed_address_cus_dl.getText().toString();
+                                    Constants.address_cus =  ed_sdt_cus_dl.getText().toString();
+                                    dialog.cancel();
+                                }
+
+                                @Override
+                                public void onFailure(Call<Account_cus_rp> call, Throwable t) {
+
+                                }
+                            });
+
+                            Constants.name_cus = ed_name_cus_dl.getText().toString();
+                            Constants.sdt_cus = ed_address_cus_dl.getText().toString();
+                            Constants.address_cus =  ed_sdt_cus_dl.getText().toString();
+                            order_name_cus.setText("Tên khách hàng: "+ed_name_cus_dl.getText().toString());
+                            order_sdt_cus.setText("Số điện thoại: "+ed_address_cus_dl.getText().toString());
+                            order_address_cus.setText("Địa chỉ nhận hàng: "+ed_sdt_cus_dl.getText().toString());
                             dialog.cancel();
                         }
+
+                    }
+                });
+                            }
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<List<Customers>> call, Throwable t) {
 
                     }
                 });

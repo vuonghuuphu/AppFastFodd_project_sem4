@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="280dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="290dp"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:layout_gravity="center_horizontal"
-    >
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:cardCornerRadius="8dp"
-    >
+    app:cardCornerRadius="15dp"
+    android:layout_marginBottom="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:background="#F4F4F4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="6">
+>
 
         <ImageView
             android:id="@+id/iv_item_listproduct"
             android:layout_width="match_parent"
             android:layout_height="195dp"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@drawable/border_item_product"
             android:src="@drawable/next" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="4"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -61,14 +50,7 @@
                 android:text="200/ngay"
                 android:textSize="10sp" />
 
-            <TextView
-                android:id="@+id/tv_shop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cua hang: ha noi"
-                android:textSize="10sp" />
 
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
-</LinearLayout>

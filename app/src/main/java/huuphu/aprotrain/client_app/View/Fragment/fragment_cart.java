@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,25 +40,39 @@ public class fragment_cart extends Fragment {
 
     RecyclerView recyclerView;
     TextView btn_to_nav_await,btn_to_nav_ship,btn_to_nav_ss;
-    LinearLayout linearLayout;
+    LinearLayout linearLayout,btn_to_nav_await_3,btn_to_nav_await_2,btn_to_nav_await_1;
+    SwipeRefreshLayout swipeRefreshLayout;
+    int checkScreen = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-    recyclerView = view.findViewById(R.id.rcv_order_list);
-    btn_to_nav_await = view.findViewById(R.id.btn_to_nav_await);
-    btn_to_nav_ship = view.findViewById(R.id.btn_to_nav_ship);
+        recyclerView = view.findViewById(R.id.rcv_order_list);
+        btn_to_nav_await = view.findViewById(R.id.btn_to_nav_await);
+        btn_to_nav_ship = view.findViewById(R.id.btn_to_nav_ship);
         btn_to_nav_ss = view.findViewById(R.id.btn_to_nav_ss);
         linearLayout = view.findViewById(R.id.ll_emty_order);
+        btn_to_nav_await_3 = view.findViewById(R.id.btn_to_nav_await_3);
+        btn_to_nav_await_2 = view.findViewById(R.id.btn_to_nav_await_2);
+        btn_to_nav_await_1 = view.findViewById(R.id.btn_to_nav_await_1);
+        swipeRefreshLayout = view.findViewById(R.id.oderlist_fresh);
 
-        btn_to_nav_await.setBackgroundColor(Color.parseColor("#F9B138"));
-        btn_to_nav_await.setTextColor(Color.WHITE);
+        Dialog dialogoload = new Dialog(view.getContext()); // Context, this, etc.
+        dialogoload.setContentView(R.layout.dialogloading);
+        dialogoload.show();
+
+        btn_to_nav_await.setBackgroundColor(Color.WHITE);
+        btn_to_nav_await_1.setBackgroundColor(Color.parseColor("#F9B138"));
+        btn_to_nav_await_2.setBackgroundColor(Color.WHITE);
+        btn_to_nav_await_3.setBackgroundColor(Color.WHITE);
+        btn_to_nav_await.setTextColor(Color.parseColor("#F9B138"));
         btn_to_nav_ship.setBackgroundColor(Color.WHITE);
         btn_to_nav_ship.setTextColor(Color.BLACK);
         btn_to_nav_ss.setBackgroundColor(Color.WHITE);
         btn_to_nav_ss.setTextColor(Color.BLACK);
+
 
         if (Constants.token == null){
             Dialog dialog = new Dialog(view.getContext());
@@ -74,6 +90,7 @@ public class fragment_cart extends Fragment {
             ApiManager.getService().getOrder().enqueue(new Callback<ListOrder>() {
                 @Override
                 public void onResponse(Call<ListOrder> call, Response<ListOrder> response) {
+                    dialogoload.show();
                     ListOrder order = response.body();
                     List<OrderItem> orderItems = new ArrayList<>();
                     if (order.content != null) {
@@ -83,6 +100,7 @@ public class fragment_cart extends Fragment {
                             }
                         }
                         if (orderItems.size() > 0) {
+                            dialogoload.cancel();
                             linearLayout.setVisibility(View.GONE);
                             recyclerView.setVisibility(View.VISIBLE);
                             Order_Adapter adapter = new Order_Adapter(fragment_cart.this, orderItems);
@@ -90,6 +108,7 @@ public class fragment_cart extends Fragment {
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
                         } else {
+                            dialogoload.cancel();
                             linearLayout.setVisibility(View.VISIBLE);
                             recyclerView.setVisibility(View.GONE);
                         }
@@ -106,8 +125,13 @@ public class fragment_cart extends Fragment {
         btn_to_nav_await.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_to_nav_await.setBackgroundColor(Color.parseColor("#F9B138"));
-                btn_to_nav_await.setTextColor(Color.WHITE);
+                checkScreen = 1;
+                dialogoload.show();
+                btn_to_nav_await.setBackgroundColor(Color.WHITE);
+                btn_to_nav_await.setTextColor(Color.parseColor("#F9B138"));
+                btn_to_nav_await_1.setBackgroundColor(Color.parseColor("#F9B138"));
+                btn_to_nav_await_2.setBackgroundColor(Color.WHITE);
+                btn_to_nav_await_3.setBackgroundColor(Color.WHITE);
                 btn_to_nav_ship.setBackgroundColor(Color.WHITE);
                 btn_to_nav_ship.setTextColor(Color.BLACK);
                 btn_to_nav_ss.setBackgroundColor(Color.WHITE);
@@ -123,6 +147,7 @@ public class fragment_cart extends Fragment {
                                     orderItems.add(order.content.get(i));
                                 }
                             }   if (orderItems.size() > 0){
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.GONE);
                                 recyclerView.setVisibility(View.VISIBLE);
                                 Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
@@ -130,6 +155,7 @@ public class fragment_cart extends Fragment {
                                 recyclerView.setLayoutManager(layoutManager);
                                 recyclerView.setAdapter(adapter);
                             }else {
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.VISIBLE);
                                 recyclerView.setVisibility(View.GONE);
                             }
@@ -145,8 +171,13 @@ public class fragment_cart extends Fragment {
         btn_to_nav_ship.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_to_nav_ship.setBackgroundColor(Color.parseColor("#F9B138"));
-                btn_to_nav_ship.setTextColor(Color.WHITE);
+                checkScreen = 2;
+                dialogoload.show();
+                btn_to_nav_await_2.setBackgroundColor(Color.parseColor("#F9B138"));
+                btn_to_nav_ship.setBackgroundColor(Color.WHITE);
+                btn_to_nav_ship.setTextColor(Color.parseColor("#F9B138"));
+                btn_to_nav_await_1.setBackgroundColor(Color.WHITE);
+                btn_to_nav_await_3.setBackgroundColor(Color.WHITE);
                 btn_to_nav_await.setBackgroundColor(Color.WHITE);
                 btn_to_nav_await.setTextColor(Color.BLACK);
                 btn_to_nav_ss.setBackgroundColor(Color.WHITE);
@@ -163,6 +194,7 @@ public class fragment_cart extends Fragment {
                                 }
                             }
                             if (orderItems.size() > 0){
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.GONE);
                                 recyclerView.setVisibility(View.VISIBLE);
                                 Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
@@ -170,6 +202,7 @@ public class fragment_cart extends Fragment {
                                 recyclerView.setLayoutManager(layoutManager);
                                 recyclerView.setAdapter(adapter);
                             }else {
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.VISIBLE);
                                 recyclerView.setVisibility(View.GONE);
                             }
@@ -185,8 +218,13 @@ public class fragment_cart extends Fragment {
         btn_to_nav_ss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_to_nav_ss.setBackgroundColor(Color.parseColor("#F9B138"));
-                btn_to_nav_ss.setTextColor(Color.WHITE);
+                checkScreen = 3;
+                dialogoload.show();
+                btn_to_nav_await_1.setBackgroundColor(Color.WHITE);
+                btn_to_nav_await_2.setBackgroundColor(Color.WHITE);
+                btn_to_nav_await_3.setBackgroundColor(Color.parseColor("#F9B138"));
+                btn_to_nav_ss.setBackgroundColor(Color.WHITE);
+                btn_to_nav_ss.setTextColor(Color.parseColor("#F9B138"));
                 btn_to_nav_ship.setBackgroundColor(Color.WHITE);
                 btn_to_nav_ship.setTextColor(Color.BLACK);
                 btn_to_nav_await.setBackgroundColor(Color.WHITE);
@@ -203,6 +241,7 @@ public class fragment_cart extends Fragment {
                                 }
                             }
                             if (orderItems.size() > 0){
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.GONE);
                                 recyclerView.setVisibility(View.VISIBLE);
                                 Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
@@ -210,6 +249,7 @@ public class fragment_cart extends Fragment {
                                 recyclerView.setLayoutManager(layoutManager);
                                 recyclerView.setAdapter(adapter);
                             }else {
+                                dialogoload.cancel();
                                 linearLayout.setVisibility(View.VISIBLE);
                                 recyclerView.setVisibility(View.GONE);
                             }
@@ -219,6 +259,112 @@ public class fragment_cart extends Fragment {
                         System.out.println("code order: ");
                     }
                 });
+            }
+        });
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                switch (checkScreen){
+                    case 1:
+                        ApiManager.getService().getOrder().enqueue(new Callback<ListOrder>() {
+                            @Override
+                            public void onResponse(Call<ListOrder> call, Response<ListOrder> response) {
+                                ListOrder order = response.body();
+                                List<OrderItem> orderItems = new ArrayList<>();
+                                if (order.content != null){
+                                    for (int i = 0; i < order.content.size(); i++) {
+                                        if (order.content.get(i).accountId.equals(Constants.idUser)&& order.content.get(i).status.equals("WAITING")){
+                                            orderItems.add(order.content.get(i));
+                                        }
+                                    }   if (orderItems.size() > 0){
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.GONE);
+                                        recyclerView.setVisibility(View.VISIBLE);
+                                        Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
+                                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext(),RecyclerView.VERTICAL,false);
+                                        recyclerView.setLayoutManager(layoutManager);
+                                        recyclerView.setAdapter(adapter);
+                                    }else {
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.VISIBLE);
+                                        recyclerView.setVisibility(View.GONE);
+                                    }
+                                }}
+                            @Override
+                            public void onFailure(Call<ListOrder> call, Throwable t) {
+                                System.out.println("code order: ");
+                            }
+                        });
+                        swipeRefreshLayout.setRefreshing(false);
+                        break;
+                    case 2:
+                        ApiManager.getService().getOrder().enqueue(new Callback<ListOrder>() {
+                            @Override
+                            public void onResponse(Call<ListOrder> call, Response<ListOrder> response) {
+                                ListOrder order = response.body();
+                                List<OrderItem> orderItems = new ArrayList<>();
+                                if (order.content != null){
+                                    for (int i = 0; i < order.content.size(); i++) {
+                                        if (order.content.get(i).accountId.equals(Constants.idUser) && order.content.get(i).status.equals("DELIVERING")){
+                                            orderItems.add(order.content.get(i));
+                                        }
+                                    }
+                                    if (orderItems.size() > 0){
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.GONE);
+                                        recyclerView.setVisibility(View.VISIBLE);
+                                        Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
+                                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext(),RecyclerView.VERTICAL,false);
+                                        recyclerView.setLayoutManager(layoutManager);
+                                        recyclerView.setAdapter(adapter);
+                                    }else {
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.VISIBLE);
+                                        recyclerView.setVisibility(View.GONE);
+                                    }
+                                }}
+                            @Override
+                            public void onFailure(Call<ListOrder> call, Throwable t) {
+                                System.out.println("code order: ");
+                            }
+                        });
+                        swipeRefreshLayout.setRefreshing(false);
+                        break;
+                    case 3:
+                        ApiManager.getService().getOrder().enqueue(new Callback<ListOrder>() {
+                            @Override
+                            public void onResponse(Call<ListOrder> call, Response<ListOrder> response) {
+                                ListOrder order = response.body();
+                                List<OrderItem> orderItems = new ArrayList<>();
+                                if (order.content != null){
+                                    for (int i = 0; i < order.content.size(); i++) {
+                                        if (order.content.get(i).accountId.equals(Constants.idUser) && order.content.get(i).status.equals("CONFIRMED")){
+                                            orderItems.add(order.content.get(i));
+                                        }
+                                    }
+                                    if (orderItems.size() > 0){
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.GONE);
+                                        recyclerView.setVisibility(View.VISIBLE);
+                                        Order_Adapter adapter = new Order_Adapter(fragment_cart.this,orderItems);
+                                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext(),RecyclerView.VERTICAL,false);
+                                        recyclerView.setLayoutManager(layoutManager);
+                                        recyclerView.setAdapter(adapter);
+                                    }else {
+                                        dialogoload.cancel();
+                                        linearLayout.setVisibility(View.VISIBLE);
+                                        recyclerView.setVisibility(View.GONE);
+                                    }
+                                }}
+                            @Override
+                            public void onFailure(Call<ListOrder> call, Throwable t) {
+                                System.out.println("code order: ");
+                            }
+                        });
+                        swipeRefreshLayout.setRefreshing(false);;
+                        break;
+                }
             }
         });
 

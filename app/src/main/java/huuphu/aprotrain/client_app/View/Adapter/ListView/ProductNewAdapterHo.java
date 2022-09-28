@@ -51,18 +51,18 @@ public class ProductNewAdapterHo extends RecyclerView.Adapter {
         ProductItem model = productList.get(position);
         productHolder.tv_Name.setText(model.getName());
         String Price_un = NumberFormat.getNumberInstance(Locale.US).format(model.getPromotion_price());
-        if (model.getUnit_price() == 0){
-            productHolder.tv_Luotmua.setVisibility(View.GONE);
-        }else {
-            productHolder.tv_Luotmua.setText(Price_un + " vnđ");
-            productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
         String Price = NumberFormat.getNumberInstance(Locale.US).format(model.getUnit_price());
-        productHolder.tv_Price.setText(Price+" vnđ");
+        if (model.getPromotion_price() == 0){
+            productHolder.tv_Luotmua.setVisibility(View.GONE);
+            productHolder.tv_Price.setText(Price+" vnđ");
+        }else {
+            productHolder.tv_Luotmua.setText(Price + " vnđ");
+            productHolder.tv_Luotmua.setPaintFlags(productHolder.tv_Luotmua.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            productHolder.tv_Price.setText(Price_un+" vnđ");
+        }
         Picasso.get()
                 .load(model.getThumbnail())
-                .resize(172, 172)
-                .centerCrop()
+                .resize(430, 430)
                 .into(productHolder.iv_Image);
     }
 
